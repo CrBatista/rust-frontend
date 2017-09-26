@@ -1,0 +1,23 @@
+<div id="wrapLoginContainer">
+  <div id="wrapBlur">
+    <div id="loginBackground">
+    </div>
+  </div>
+  <div id="containerLogin">
+    <img id="loginIcon" src="/assets/images/login/loginIcon.png" alt="Icono de Login">
+    <form action="https://google.es" method="GET">
+      <div id="formInputWrapper">
+        <div id="wrapperUsernameInput">
+          <label class="formInputLabel" #usernameLabel [ngStyle]="setLabelStyles('username')" for="inputUsername">Usuario</label><br>
+          <input [(ngModel)]="username" (focus)="onFocusEvent('username')" (blur)="onBlurEvent('username')" class="formInput" type="text"
+            name="inputUsername" /><br>
+        </div>
+        <div id="wrapperPasswordInput">
+          <label class="formInputLabel" #passwordLabel [ngStyle]="setLabelStyles('password')" for="inputPassword">Password</label><br>
+          <input [(ngModel)]="password" class="formInput" (focus)="onFocusEvent('password')" (blur)="onBlurEvent('password')" type="password"
+            name="inputPassword" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
