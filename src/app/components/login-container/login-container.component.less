@@ -29,7 +29,7 @@
     position: absolute;
     width: 400px;
     height: 500px;
-    background-color: rgba(10, 10, 10, 0.3);
+    background-color: rgba(10, 10, 10, 0.5);
     right: 10%;
     top: 160px;
     text-align: center;
@@ -77,10 +77,80 @@
             border: none;
             border-bottom: 2px solid white;
         }
+
         .formInput:focus {
             outline-width: 0;
             transition: all 0.3s;
             border-bottom: 2px solid #3BA65B;
+        }
+
+        #loginSubmitButton {    
+            border-radius: 20px;
+            position: relative;
+            text-align: center;
+            width: 200px;
+            top: 175px;
+            height: 60px;
+            margin: 0 auto;
+            background-color: rgba(10, 10, 10, 0.5);
+            border: 2px solid rgb(58, 112, 74);
+            cursor: pointer;
+        }
+        
+        #loginSubmitText {
+            outline: none;
+        }
+
+        #loginSubmitText {
+            background: none;
+            border: none;
+            color: rgb(120, 154, 130);
+            width: 160px;
+            margin-top: 12px;
+            font-size: 22px;
+            font-family: 'Anton';
+            cursor: pointer;            
+        }
+
+        .submitInputHovered {
+            transition: all 0.2s;
+            background-color: rgba(54, 80, 62, 0.7) !important;
+        }
+        
+        .submitTextHovered {
+            transition: all .2s;
+            color: white !important;
+        }
+
+        .loginButtonClicked {
+            transition: 0.5s all;
+            background-color: transparent !important;
+            width: 60px !important;
+            border-radius: 100% !important;
+            border: none !important;
+            border-right: 4px solid rgb(58, 112, 74) !important;
+            animation: rotating 1s linear infinite;
+            animation-delay: 0.5s;
+            pointer-events: none;
+        }
+
+        .loginButtonOK {
+            transition: all 0.5s, background-position 0s;
+            background-color: rgb(58, 112, 74) !important;
+            background-image: url(/assets/images/login/tickIcon.png);
+            background-size: contain;
+            background-size: 70%;
+            width: 60px !important;
+            border-radius: 100% !important;
+            border: none !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0px 0px 10px 3px black;
+        }
+
+        .loginTextClicked {
+            transition: all .2s;
+            display: none !important;
         }
     }
 }

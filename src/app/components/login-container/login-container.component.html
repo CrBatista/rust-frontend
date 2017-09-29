@@ -13,9 +13,13 @@
             name="inputUsername" /><br>
         </div>
         <div id="wrapperPasswordInput">
-          <label class="formInputLabel" #passwordLabel [ngStyle]="setLabelStyles('password')" for="inputPassword">Password</label><br>
+          <label class="formInputLabel" #passwordLabel [ngStyle]="setLabelStyles('password')" for="inputPassword">Contraseña</label><br>
           <input [(ngModel)]="password" class="formInput" (focus)="onFocusEvent('password')" (blur)="onBlurEvent('password')" type="password"
             name="inputPassword" />
+        </div>
+        <div (click)="clickLoginButton()" #wrapperSubmit [ngClass]="loginButtonStyle" [ngClass]="submitHover" (mouseover)='hoverLoginButton($event)'
+          (mouseout)="hoverLoginButton($event)" id="loginSubmitButton">
+          <input [ngClass]="textHover" [ngClass]="loginTextStyle" id="loginSubmitText" type="button" value="LOGIN">
         </div>
       </div>
     </form>

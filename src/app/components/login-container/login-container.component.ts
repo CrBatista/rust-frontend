@@ -16,11 +16,20 @@ export class LoginContainerComponent implements OnInit {
   @ViewChild('passwordLabel')
   private passwordLabel: ElementRef;
 
+  @ViewChild('wrapperSubmit')
+  private wrapperSubmit: ElementRef;
+
   public username: string;
   public password: string;
 
   private _usernameFocused: boolean;
   private _passwordFocused: boolean;
+
+  public textHover: string;
+  public submitHover: string;
+
+  public loginButtonStyle: any;
+  public loginTextStyle: any;
 
   constructor() { }
 
@@ -83,5 +92,44 @@ export class LoginContainerComponent implements OnInit {
     } else {
       return styleEnd;
     }
+  }
+
+  /**
+   * Event launched on Submit Login Hover. Used for styling
+   *
+   * @param {Event} event
+   * @memberof LoginContainerComponent
+   */
+  public hoverLoginButton(event: Event): void {
+    this.textHover = (event.type === 'mouseover') ? 'submitTextHovered' : null;
+    this.submitHover = (event.type === 'mouseover') ? 'submitInputHovered' : null;
+  }
+
+  /**
+   * Event launched on Submit Login clicked. Used for styling and DoLogin
+   *
+   * @memberof LoginContainerComponent
+   */
+  public clickLoginButton(): void {
+    if (this._formInputsAreCorrect()) {
+      this.loginButtonStyle = 'loginButtonClicked';
+      (<HTMLInputElement>document.getElementById('loginSubmitText')).value = '';
+    }
+
+    // This will be the OK subscription
+    setTimeout(() => {
+      this.loginButtonStyle = 'loginButtonOK';
+    }, 2000);
+  }
+
+  /**
+   * Will validate the fields introduced for Login.
+   *
+   * @private
+   * @returns {boolean}
+   * @memberof LoginContainerComponent
+   */
+  private _formInputsAreCorrect(): boolean {
+    return true;
   }
 }
